@@ -416,8 +416,9 @@ hr {
     }
     #head nav i{
         display: inline-block;
+        margin-top: 10px;
     }
-    nav i:focus + .ul{
+    nav i:hover + .ul{
         display: flex;
     }
 
