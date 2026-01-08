@@ -323,7 +323,8 @@ hr {
     height: 1px;
     background: linear-gradient(to right, transparent, var(--primary), transparent);
 }
-
+.hide{
+}
 
 /* Responsive code */
 
@@ -412,16 +413,14 @@ hr {
     nav .ul {
         flex-direction: column;
         align-items: center;
-        display: none;
     }
     #head nav i{
         display: inline-block;
         margin-top: 10px;
     }
-    nav i:hover + .ul{
-        display: flex;
+    .hide{
+        display: none;
     }
-
     /* Projects */
     .card {
         width: 100%;

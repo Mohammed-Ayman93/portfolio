@@ -12,8 +12,8 @@
 <body>
     <header id="head">
         <nav>
-            <i class="fa-solid fa-bars"></i>
-            <ul class="ul">
+            <i id="btnNav" class="fa-solid fa-bars"></i>
+            <ul class="ul hide">
                     
                 <li><a href="#who">Who Am I</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -141,59 +141,7 @@
                 </div>
         </div>
     </div>
-        <!-- <table >
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>features</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Basic Website</td>
-                    <td>A simple, s atc websi e ideal for small businesses or personal por olios.</td>
-                    <td>
-                        <ul>
-                            <li>Up  o 5 pages (Home, Abou , Services, Con ac , e c.)</li>
-                            <li>Basic SEO se up</li>
-                            <li>Responsive design</li>
-                        </ul>
-                    </td>
-                    <td>50$</td>
-                </tr>
-                <tr>
-                    <td>Standard Website</td>
-                    <td>Dynamic websi e wi h CMS in egraton (e.g., WordPress) for medium sized businesses.</td>
-                    <td>
-                        <ul>
-                            <li>Up  o 5 pages (Home, Abou , Services, Con ac , e c.)</li>
-                            <li>Basic SEO se up</li>
-                            <li>Responsive design</li>
-                            <li>Basic eCommerce capabilites (if needed)</li>
-                        </ul>
-                    </td>
-                    <td>150$</td>
-                </tr>
-                <tr>
-                    <td>ECommerce Website</td>
-                    <td>A simple, s atc websi e ideal for small businesses or personal por olios.</td>
-                    <td>
-                        <ul>
-                            <li>Up  o 5 pages (Home, Abou , Services, Con ac , e c.)</li>
-                            <li>Basic SEO se up</li>
-                            <li>Responsive design</li>
-                            <li>User regis raton and login</li>
-                        </ul>
-                    </td>
-                    <td>250$</td>
-                </tr>
-
-            </tbody>
-        </table> -->
             </main>
-
     <hr>
     <footer>
 
@@ -210,6 +158,15 @@
         </form>
         <a href="https://www.linkedin.com/in/mohammd-ayman"><i class="fa-brands fa-linkedin"></i></a>
     </footer>
+
+
+    <script>
+        let ul = document.querySelector("#head .ul");
+        document.getElementById("btnNav").addEventListener("click",function(){
+            ul.classList.toggle("hide");
+            
+        })
+    </script>
 </body>
 
 </html>
