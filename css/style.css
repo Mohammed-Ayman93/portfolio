@@ -1,0 +1,453 @@
+
+/* =======================
+   Global Reset & Variables
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+:root {
+    --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --primary: #00e5ff;
+    --secondary: #00c6ff;
+    --accent: #ffd369;
+    --gold: #ffb703;
+    --text-light: #f5f5f5;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* =======================
+   Body & Layout
+======================= */
+body {
+    background: var(--main-bg);
+    color: var(--text-light);
+    line-height: 1.7;
+    padding: 80px 15%;
+}
+
+/* =======================
+   Navigation
+======================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 70%;
+    z-index: 22;
+    background: var(--card-bg);
+    border-radius: 10px;
+    text-align: center;
+}
+#head nav i{
+    color: var(--primary);
+    font-size: 24px;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+nav li {
+    padding-top: 10px;
+}
+
+nav a {
+    color: var(--gold);
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+    position: relative;
+}
+nav a::after{
+    transition: .4s ease;
+    content: "";
+    height: 2px;
+    bottom: -5px;
+    width: 0;
+    left: 0;
+    background-color: var(--gold);
+    position: absolute;
+}
+nav a:hover::after{
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* =======================
+   Headings & Text
+======================= */
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+h3 {
+    margin: 25px 0 10px;
+    color: var(--secondary);
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+h4 {
+    margin: 10px 0;
+    color: var(--accent);
+}
+
+p {
+    margin-bottom: 12px;
+    color: #e0e0e0;
+}
+
+p span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* =======================
+   About Section
+======================= */
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.main p {
+    width: 70%;
+    text-align: justify;
+}
+
+.main div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 250px;
+    border-radius: 50%;
+}
+
+.main h4 {
+    background: rgba(0, 229, 255, 0.15);
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-top: 12px;
+}
+
+/* =======================
+   Skills
+======================= */
+.ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 20px 0;
+}
+
+.ul li img {
+    width: 100px;
+    transition: 0.3s;
+}
+
+.ul li img:hover {
+    transform: scale(1.1);
+}
+
+/* =======================
+   Projects (Flip Cards)
+======================= */
+.projectSec {
+    display: flex;
+    justify-content: space-between;
+    height: 30vh;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 30%;
+    padding: 10px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.cardFront img {
+    width: 100%;
+    position: absolute;
+    inset: 0;
+}
+
+.cardBack {
+    position: absolute;
+    inset: 0;
+    padding: inherit;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background: var(--card-bg);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card:hover .cardFront {
+    backface-visibility: hidden;
+}
+
+/* =======================
+   Price Plan (Improved Cards)
+======================= */
+.priceCon {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.priceCard {
+    width: 30%;
+    background: var(--card-bg);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.priceCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 229, 255, 0.15);
+}
+
+.priceCard h4 {
+    text-align: center;
+    margin: 15px auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.priceCard div {
+    padding: 15px;
+}
+
+.priceCard div:hover {
+    background: rgba(0, 229, 255, 0.08);
+}
+
+.priceCard ul {
+    padding-left: 20px;
+}
+
+.priceCard span {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* =======================
+   Forms & Footer
+======================= */
+form {
+    margin-top: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+}
+
+/* =======================
+   Icons & Divider
+======================= */
+.fa-linkedin {
+    font-size: 35px;
+    margin-top: 20px;
+    display: inline-block;
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+.fa-linkedin:hover {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+hr {
+    margin: 30px 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+}
+
+
+/* Responsive code */
+
+/* =======================
+   Tablet (max-width: 992px)
+======================= */
+@media (max-width: 992px) {
+
+    body {
+        padding: 80px 8%;
+    }
+
+    /* Navbar */
+    nav {
+        width: 85%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* About Section */
+    .main {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .main p {
+        width: 100%;
+    }
+
+    .logo {
+        width: 200px;
+        margin-top: 15px;
+    }
+
+    /* Skills */
+    .ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* Projects */
+    .projectSec {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 30px;
+    }
+
+    .card {
+        width: 45%;
+        height: 250px;
+    }
+
+    /* Price Plan */
+    .priceCon {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .priceCard {
+        width: 45%;
+    }
+}
+
+/* =======================
+   Mobile (max-width: 576px)
+======================= */
+@media (max-width: 576px) {
+
+    body {
+        padding: 100px 5%;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Navbar */
+    nav .ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+    #head nav i{
+        display: inline-block;
+    }
+    nav i:focus + .ul{
+        display: flex;
+    }
+
+    /* Projects */
+    .card {
+        width: 100%;
+        height: 220px;
+    }
+
+    /* Price Plan */
+    .priceCard {
+        width: 100%;
+    }
+
+    /* Skills icons */
+    .ul li img {
+        width: 80px;
+    }
+
+    /* Form */
+    textarea {
+        cols: auto;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+    }
+}
